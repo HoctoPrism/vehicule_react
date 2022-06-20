@@ -8,6 +8,7 @@ import { ColorContext } from "./_colorContext";
 export const SwitchModeButton = () => {
   const theme = useTheme();
   const colorMode = React.useContext(ColorContext);
+  const {isDarkMode, toggleDarkMode} = ColorContext;
 
   return (
     <Box
@@ -20,6 +21,8 @@ export const SwitchModeButton = () => {
       <IconButton
         sx={{ ml: 1 }}
         onClick={colorMode.toggleColorMode}
+        checked={isDarkMode}
+        onChange={toggleDarkMode}
         color="inherit"
       >
         {theme.palette.mode === "dark" ? <LightIcon /> : <DarkIcon />}
