@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Grid} from "@mui/material";
+import {Box, Card, CardContent, Grid, Paper} from "@mui/material";
 import store from "../../../store";
 
 function TirageArrayList() {
@@ -18,13 +18,21 @@ function TirageArrayList() {
         const readyToShuffle = tirageList[0].split(' ')
         let finalArray = createGroups(readyToShuffle)
 
-        return (<Grid container spacing={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', my: 3}}>
+        return (<Paper sx={{p: 3, my: 5}}>
+            <Grid container spacing={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'start', my: 3}}>
                 {finalArray.map((item, key) => (
                     <Grid item xs={3} key={key}>
-                        Groupe {key+1} : {item.map((item2) => ( <Box sx={{ mx: 1 }}>{item2}</Box> ))}
+                        <Card sx={{ backgroundColor: 'primary.light' }}>
+                            <CardContent>
+                                Groupe {key+1} : {item.map((item2) => ( <Box sx={{ mx: 1 }}>{item2}</Box> ))}
+                            </CardContent>
+
+                        </Card>
+
                     </Grid>
                 ))}
             </Grid>
+        </Paper>
         )
     } else {
         return false

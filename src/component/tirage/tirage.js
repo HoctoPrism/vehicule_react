@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import '../../App.css';
-import {Box, Button, FormControl, FormHelperText, TextareaAutosize, Typography} from "@mui/material";
-import { useDispatch } from 'react-redux';
+import {Button, Container, FormControl, Paper, TextField, Typography} from "@mui/material";
+import {useDispatch} from 'react-redux';
 import {setTirageArray} from "../features/TirageArray/TirageArraySlice";
 import TirageArrayList from "../features/TirageArray/TirageArray";
 
@@ -20,25 +20,26 @@ function Tirage() {
         dispatch(setTirageArray(formValues));
     }
 
-
-    return <section>
-        <Typography variant="h3" sx={{ mt: 10, textAlign: "center" }} gutterBottom>Tirage</Typography>
-        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-            <form>
-                <FormControl>
-                    <TextareaAutosize
-                        aria-label="participant_helper"
-                        placeholder="Nom du Participant"
-                        style={{ width: 400 }}
-                        /*value={formValues}*/ onChange={(e) => setFormValues(e.target.value)}
-                    />
-                    <FormHelperText id="participant_helper">Veuillez entrer un nom.</FormHelperText>
-                    <Button type="submit" size="small" variant="contained" onClick={getFormValue}>Envoyer</Button>
-                </FormControl>
-            </form>
-        </Box>
-        <TirageArrayList />
-    </section>
+    return <Container maxWidth="sm">
+        <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
+            <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tirage</Typography>
+            <FormControl sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <TextField style={{width: 400, height: 50}}
+                           label="Noms des Participants"
+                           variant="standard"
+                           multiline
+                           onChange={(e) => setFormValues(e.target.value)}
+                />
+                <Button type="submit"
+                        variant="contained"
+                        sx={{mt: 5, width: "35%"}}
+                        onClick={getFormValue}>
+                    Envoyer
+                </Button>
+            </FormControl>
+        </Paper>
+        <TirageArrayList/>
+    </Container>
 }
 
 
