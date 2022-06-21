@@ -14,17 +14,17 @@ function TirageArrayList() {
             .map((_, i) => shuffle.slice(i * perGroup, (i + 1) * perGroup));
     }
 
-    if (tirageList[0]) {
+    if (tirageList && tirageList[0]) {
         const readyToShuffle = tirageList[0].split(' ')
         let finalArray = createGroups(readyToShuffle)
 
         return (<Paper sx={{p: 3, my: 5}}>
             <Grid container spacing={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'start', my: 3}}>
                 {finalArray.map((item, key) => (
-                    <Grid item xs={3} key={key}>
+                    <Grid item xs={3} key={item}>
                         <Card sx={{ backgroundColor: 'primary.light' }}>
                             <CardContent>
-                                Groupe {key+1} : {item.map((item2) => ( <Box sx={{ mx: 1 }}>{item2}</Box> ))}
+                                Groupe {key+1} : {item.map((item2, key2) => ( <Box key={item2+key2} sx={{ mx: 1 }}>{item2}</Box> ))}
                             </CardContent>
 
                         </Card>

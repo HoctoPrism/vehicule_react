@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import '../../App.css';
-import {Button, Container, FormControl, Paper, TextField, Typography} from "@mui/material";
+import {Box, Button, Container, FormControl, Paper, TextField, Typography} from "@mui/material";
 import {useDispatch} from 'react-redux';
-import {setTirageArray} from "../features/TirageArray/TirageArraySlice";
+import {resetTirageArray, setTirageArray} from "../features/TirageArray/TirageArraySlice";
 import TirageArrayList from "../features/TirageArray/TirageArray";
 
 function Tirage() {
@@ -20,6 +20,11 @@ function Tirage() {
         dispatch(setTirageArray(formValues));
     }
 
+    const resetFormValue = (e) => {
+        e.preventDefault();
+        dispatch(resetTirageArray());
+    }
+
     return <Container maxWidth="sm">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tirage</Typography>
@@ -30,12 +35,14 @@ function Tirage() {
                            multiline
                            onChange={(e) => setFormValues(e.target.value)}
                 />
-                <Button type="submit"
-                        variant="contained"
-                        sx={{mt: 5, width: "35%"}}
-                        onClick={getFormValue}>
-                    Envoyer
-                </Button>
+                <Box sx={{mt: 5}}>
+                    <Button type="submit"
+                            variant="contained"
+                            onClick={getFormValue}>
+                        Envoyer
+                    </Button>
+                    <Button sx={{ mx: 5 }} variant="contained" onClick={resetFormValue}>Reset</Button>
+                </Box>
             </FormControl>
         </Paper>
         <TirageArrayList/>
