@@ -22,6 +22,7 @@ function Tirage() {
 
     const resetFormValue = (e) => {
         e.preventDefault();
+        setFormValues([])
         dispatch(resetTirageArray());
     }
 
@@ -33,6 +34,7 @@ function Tirage() {
                            label="Noms des Participants"
                            variant="standard"
                            multiline
+                           value={formValues}
                            onChange={(e) => setFormValues(e.target.value)}
                 />
                 <Box sx={{mt: 5}}>
