@@ -1,23 +1,24 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
 
 import './index.css';
-import './component/_partials/_theme/_theme.scss';
+import './assets/css/component/_theme.scss';
 
 import {Provider} from 'react-redux';
 import store from './store'
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
-
-import App from './App';
-import Home from "./component/home/home";
-import Tirage from "./component/tirage/tirage";
 import RouteService from "./services/route/route-service";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 import {lightTheme} from "./component/_partials/_theme/_lightTheme";
 import {darkTheme} from "./component/_partials/_theme/_darkTheme";
 import {ColorContext, setThemeToStorage} from "./component/_partials/_theme/_colorContext";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+
+import App from './App';
+import Home from "./component/home/home";
+import Tirage from "./component/tirage/tirage";
 import {Navbar} from "./component/_partials/_navbar/_navbar";
 
 function CustomTheme() {

@@ -6,22 +6,16 @@ function Home() {
 
     document.title = 'Page d\'accueil'
 
-    return <div className="container">
-        <div className="bg-clair rounded shadow alt-text-sombre">
-            <div className="m-5">
-                <h1 className="text-center py-3">Welcome</h1>
-                <div className="row row-cols-2 d-flex justify-content-evenly align-items-center pb-5">
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, eius excepturi ipsum optio
-                        sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos nobis, consectetur quod
-                        quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
-                        eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos
-                        nobis, consectetur quod quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Reiciendis, eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto
-                        aliquam ullam ratione dignissimos nobis, consectetur quod quis placeat officiis! Est!
-                    </div>
-                    <img src="logo512.png" alt="gg" className="img-fluid w-25"></img>
-                </div>
-            </div>
+    return <div>
+        <h1>Welcome</h1>
+        <h2>REGLER LE SOUCIS DE FLASH BLANC LORS D'UN LOAD DE PAGE</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, eius excepturi ipsum optio
+            sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos nobis, consectetur quod
+            quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
+            eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos
+            nobis, consectetur quod quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Reiciendis, eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto
+            aliquam ullam ratione dignissimos nobis, consectetur quod quis placeat officiis! Est!
         </div>
     </div>
 }
