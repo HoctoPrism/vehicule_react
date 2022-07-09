@@ -13,7 +13,7 @@ export function Navbar() {
                 <Box sx={{m: 5, flexGrow: 1}} component="div">{document.title}</Box>
                 <Box sx={{display: 'flex', justifyContent: "flex-end", alignItems: "center"}}>
                     <Button color="secondary" href='/'>Accueil</Button>
-                    <Button color="secondary" href='tirage'>Tirage</Button>
+                    <Button color="secondary" href='type'>Types</Button>
                     <SwitchModeButton/>
                 </Box>
             </AppBar>

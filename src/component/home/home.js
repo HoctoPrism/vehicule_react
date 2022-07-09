@@ -1,23 +1,18 @@
 import React from "react";
 import '../../App.css';
+import {Box, Container, Typography} from "@mui/material";
 
 
 function Home() {
 
     document.title = 'Page d\'accueil'
 
-    return <div>
-        <h1>Welcome</h1>
-        <h2>REGLER LE SOUCIS DE FLASH BLANC LORS D'UN LOAD DE PAGE</h2>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, eius excepturi ipsum optio
-            sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos nobis, consectetur quod
-            quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
-            eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto aliquam ullam ratione dignissimos
-            nobis, consectetur quod quis placeat officiis! Est! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis, eius excepturi ipsum optio sit ipsam sapiente debitis ex iusto
-            aliquam ullam ratione dignissimos nobis, consectetur quod quis placeat officiis! Est!
-        </div>
-    </div>
+    return <Container maxWidth="lg">
+        <Box>
+            <Typography variant='h2'>Welcome</Typography>
+            <Typography variant='h5'>REGLER LE SOUCIS DE FLASH BLANC LORS D'UN LOAD DE PAGE</Typography>
+        </Box>
+    </Container>
 }
 
 

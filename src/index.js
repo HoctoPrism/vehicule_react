@@ -18,7 +18,7 @@ import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 
 import App from './App';
 import Home from "./component/home/home";
-import Tirage from "./component/tirage/tirage";
+import Type from "./component/type/type";
 import {Navbar} from "./component/_partials/_navbar/_navbar";
 
 function CustomTheme() {
@@ -55,7 +55,7 @@ function CustomTheme() {
             <BrowserRouter>
                 <Routes>
                     <Route exact path="/" element={<RouteService Component={Home}/>}>Accueil</Route>
-                    <Route exact path="tirage" element={<RouteService Component={Tirage}/>}>Tirage</Route>
+                    <Route exact path="type" element={<RouteService Component={Type}/>}>Type</Route>
                     <Route path="*" element={
                         <div>
                             <p>Il n'y a rien ici !</p>
